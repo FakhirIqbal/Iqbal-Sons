@@ -1,4 +1,5 @@
 import "./style.css";
+import {useEffect } from "react";
 import Mail_png from "./../assest/mail.png";
 import { React } from "react";
 // import Button from '@mui/material/Button';
@@ -7,11 +8,21 @@ import InputBase from "@mui/material/InputBase";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import { TbSend } from "react-icons/tb";
+import { FaFacebookF } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaTwitter } from "react-icons/fa";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 export default function Mail() {
+  useEffect(() => {
+
+    AOS.init();
+  }, []);
+
   return (
     <>
-      <div className="mail flex flex-col items-center w-full h-[60vh] bg-slate-600">
+      <div data-aos="fade-up" className="mail flex flex-col items-center w-full h-[450px]">
         <img
           src={Mail_png}
           alt="Mail Icon"
@@ -27,10 +38,20 @@ export default function Mail() {
           sx={{
             display: "flex",
             // justifyContent: "space-between",
-            width: 400,
+            width: '100%',
             bgcolor: "#F7F7F7",
             height: "70px",
+            // border: "none" ,
             borderRadius: "35px",
+            "@media (min-width: 768px)": {
+              width: "400px", // yahaan size ko 400px se shuru karo
+            },
+            "@media (max-width: 767px)": {
+              width: "350px", // aur yahaan 300px se
+            },
+            "@media (max-width: 375px)": {
+              width: "320px", // aur yahaan 200px se
+            },
           }}
         >
           <InputBase
@@ -41,22 +62,34 @@ export default function Mail() {
           <IconButton
             type="button"
             sx={{
-                position: "relative",
-                marginTop:"3px",
-                left: "5px",
+              position: "relative",
+              marginTop: "3px",
+              left: "5px",
               height: "63px",
               bgcolor: "#fbd103",
               width: "65px",
-              ":hover": { 
-                backgroundColor: "#fbd103"
-              }
+              ":hover": {
+                backgroundColor: "#fbd103",
+              },
             }}
             aria-label="search"
           >
-            <TbSend  className="text-3xl" />
+            <TbSend className="text-3xl" />
           </IconButton>
           <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
         </Paper>
+
+        <div className="flex gap-3 mt-3" >
+        <span className="bg-[#f3f3f3] text-sm h-10 w-10 rounded-full flex items-center justify-center">
+          <FaFacebookF className="text-xl " />
+        </span>
+        <span className="bg-[#f3f3f3] text-sm h-10 w-10 rounded-full flex items-center justify-center">
+          <FaInstagram className="text-xl " />
+        </span>
+        <span className="bg-[#f3f3f3] text-sm h-10 w-10 rounded-full flex items-center justify-center">
+          <FaTwitter className="text-xl " />
+        </span>
+        </div>
       </div>
     </>
   );

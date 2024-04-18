@@ -1,5 +1,5 @@
 import './style.css'
-import Hero_img from "./../assest/Hero-png.png";
+import Hero_img from "./../assest/hero2.webp";
 import * as React from 'react';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
@@ -10,7 +10,7 @@ import Button from '@mui/material/Button';
 export default function Hero() {
 
   return (
-  <div className='hero'> 
+  <div className='hero' > 
       <React.Fragment >
       <CssBaseline />
       <Container maxWidth="lg" className='main'>

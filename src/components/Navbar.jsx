@@ -12,12 +12,11 @@ import Paper from "@mui/material/Paper";
 import InputBase from "@mui/material/InputBase";
 import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
-import { TbSend } from "react-icons/tb";
 
 function HeaderMenu() {
   return (
-    <Navbar expand="lg" className=" w-auto bg-[#f7f7f7] sticky">
-      <Container fluid>
+    <Navbar expand="lg" className="w-full sticky-top bg-white" >
+      <Container fluid className="max-w-screen-xl">
         <Navbar.Collapse id="navbarScroll"></Navbar.Collapse>
         <Navbar.Brand href="#">
           <img className="h-10 max-w-40 ml-5 mt-1" src={Logo} />
@@ -35,7 +34,6 @@ function HeaderMenu() {
                 color: "black",
                 fontFamily: "inherit",
                 fontWeight: "bold",
-                borderRadius: "14px",
               }}
             >
               Coat/Pent
@@ -46,7 +44,6 @@ function HeaderMenu() {
                 color: "black",
                 fontFamily: "inherit",
                 fontWeight: "bold",
-                borderRadius: "14px",
               }}
             >
               Sherwani
@@ -57,7 +54,6 @@ function HeaderMenu() {
                 color: "black",
                 fontFamily: "inherit",
                 fontWeight: "bold",
-                borderRadius: "14px",
               }}
             >
               Kurta/Shalwar
@@ -68,15 +64,10 @@ function HeaderMenu() {
                 color: "black",
                 fontFamily: "inherit",
                 fontWeight: "bold",
-                borderRadius: "14px",
               }}
             >
               Sale
             </Button>
-            {/* <Nav.Link href="#action2">Coat/Pent</Nav.Link>
-            <Nav.Link href="#action2">Sherwani</Nav.Link>
-            <Nav.Link href="#action2">Kurta/Shalwar</Nav.Link>
-            <Nav.Link href="#action2">Sale</Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
         <Navbar.Collapse id="navbarScroll">
@@ -86,11 +77,9 @@ function HeaderMenu() {
                 component="form"
                 sx={{
                   display: "flex",
-                  width: "224px",
-                  backgroundColor: "#E5E5E5",
+                  width: "200px",
+                  borderBottom: "1px solid black",
                   height: "35px",
-                  border: "none",
-                  borderRadius: "18px",
                   boxShadow: "none",
                 }}
               >
